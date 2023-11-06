@@ -70,10 +70,10 @@ startB.addEventListener('click',() =>{
 resetB.addEventListener('click',() =>{
     state = 'start';
     startB.id = "start";
+    clearInterval(timerid);
     startB.textContent = 'Start';
     dis_t =0;
     timer.textContent = string(dis_t);
 },10);
-
 
 

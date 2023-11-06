@@ -1,8 +1,10 @@
 *{
     text-align: center;
+    
 }
 
 .time{
+    margin-top: 10%;
     font-size: 100px;
 }
 
@@ -16,11 +18,12 @@
 }
 
 .button{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     font-size: 15px;
     font-weight: bold;
+    border: none;
 }
 
 #reset{
@@ -29,11 +32,11 @@
 }
 #start{
     color: rgb(245, 251, 245);
-    /* background-color: rgb(61, 190, 111); */
     background: linear-gradient(-20deg, #d558c8 0%, #0dcbff 100%);
     border: none;
 }
 
-#start#stop {
-    background-color: #f90fe1;
+#stop {
+    background: #f90fe1;
+    border: none;
 }

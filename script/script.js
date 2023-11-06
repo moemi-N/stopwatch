@@ -1,3 +1,6 @@
+// 遠隔での操作を可能
+'use strict';
+
 const timer = document.getElementById('time');
 const startB = document.getElementById('start');
 const stopB = document.getElementById('stop');
@@ -16,10 +19,12 @@ startB.addEventListener('click',() =>{
     setInterval(() =>{
         // 毎設定秒後との時間を取得するから、再代入、再定義不可のconstを使用
         const now_t = Date.now();
+        // const dis_t = now_t - start_t/1000;
+        // ミリ秒についての表示なので余りでいい
         const dis_t = now_t - start_t;
-
-        // textContentで全てのhtml/cssの要素を取得
-        time.textContent = dis_t;
+        const ms = dis_t % 1000;
+        // textContentで全てのhtml/cssの要素を取得できる⇔指定したIdに表示
+        time.textContent = ms;
     },10);
 
     console.log('dog');

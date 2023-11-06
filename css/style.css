@@ -33,3 +33,7 @@
     background: linear-gradient(-20deg, #d558c8 0%, #0dcbff 100%);
     border: none;
 }
+
+#start#stop {
+    background-color: #f90fe1;
+}

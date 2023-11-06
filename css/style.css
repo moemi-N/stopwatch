@@ -11,6 +11,7 @@
     display: flex;
     /* 横幅をtimeにそろえたいが出来ないでいる */
     margin: 5% auto;
+    width: 500px;
     justify-content: space-between;
 }
 

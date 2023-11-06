@@ -10,6 +10,7 @@ let x;
 
 let state = 'start';
 let timerid;
+let dis_t=0;//関数の外に出して、リスタートの設定でも使えるように
 
 function string(mls){
     // setInterval内が長くなったので経過msを表示する部分をここに記す。
@@ -30,14 +31,15 @@ function string(mls){
 
 // addEventlisnerは入力動作に対するイベント処理を行うメソッド
 startB.addEventListener('click',() =>{
-    if (state == 'start'){
-        // 再定義不可、再代入可能→リセット機能させるために必要
-        let start_t = Date.now();
-
+    if (state == 'start'){       
         state ='stop';
         startB.textContent = 'Stop';
         // start.classList.add('stop');
         startB.id = 'stop';
+
+        // 再定義不可、再代入可能→リセット機能させるために必要
+        let start_t = Date.now();
+        start_t =start_t - dis_t;
 
         // 一定間隔で処理を実行する。
         timerid = setInterval(() =>{
@@ -45,13 +47,13 @@ startB.addEventListener('click',() =>{
             const now_t = Date.now();
 
             // ミリ秒についての表示なので余りでいい
-            const dis_t = now_t - start_t;
+            dis_t = now_t - start_t;
             // textContentで全てのhtml/cssの要素を取得できる⇔指定したIdに表示
             timer.textContent = string(dis_t);
             
         },10);
     }else{ 
-        state = 'stop';
+        state = 'start';
         // setIntervalでの処理を止める。
         clearInterval(timerid);
         startB.textContent = 'reStart';
@@ -60,7 +62,7 @@ startB.addEventListener('click',() =>{
     }
 
 
-     
+    //  console.log('dog');
 
     
 });

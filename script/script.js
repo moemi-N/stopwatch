@@ -23,8 +23,13 @@ startB.addEventListener('click',() =>{
         // ミリ秒についての表示なので余りでいい
         const dis_t = now_t - start_t;
         const ms = dis_t % 1000;
+        // Math.floor()関数は与えられた数値以下の最大の整数を返す
+        const sec = Math.floor(dis_t/1000) % 60;
+        const min = Math.floor(dis_t/(60*1000)) % 60;
         // textContentで全てのhtml/cssの要素を取得できる⇔指定したIdに表示
-        time.textContent = ms;
+        
+        let Time = min + ":"+ sec + ":"+ ms;
+        time.textContent = Time;
     },10);
 
     console.log('dog');

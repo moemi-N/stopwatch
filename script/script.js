@@ -4,6 +4,7 @@
 const timer = document.getElementById('time');
 const startB = document.getElementById('start');
 const stopB = document.getElementById('stop');
+const resetB = document.getElementById('reset');
 
 let reset_t;
 let x;
@@ -66,4 +67,13 @@ startB.addEventListener('click',() =>{
 
     
 });
+resetB.addEventListener('click',() =>{
+    state = 'start';
+    startB.id = "start";
+    startB.textContent = 'Start';
+    dis_t =0;
+    timer.textContent = string(dis_t);
+},10);
+
+
 
